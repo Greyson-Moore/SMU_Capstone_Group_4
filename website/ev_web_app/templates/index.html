@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ELECTRIC VEHICLES</title>
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css">
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- JS -->
+    <script type="text/javascript" src="static/js/logic.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron">
+
+    <style>
+      body,h1,h2,h3,h4,h5 {font-family: "Orbitron", sans-serif}
+      body {font: size 14px;}
+      .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+      .w3-half img:hover{opacity:1}
+</style>
+</head>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">EVnavbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <a href="about.html"></a>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home
+                  <span class="visually-hidden"></span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="tableau.html">Tableau</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a> -->
+                </div>
+              </li>
+            <!-- </ul>
+            <form class="d-flex">
+              <input class="form-control me-sm-2" type="text" placeholder="Search">
+              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </div> -->
+      </nav>
+      
+      <a href="/home"></a>
+    <hr style="color:blue; border-width: 3px;">
+    <div class="container">
+        <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Filters</div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-form-label" for="gender">Gender</label>
+                            <select id="gender">
+                                <option value="1">Female</option>
+                                <option value="0">Male</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="age">Age</label>
+                            <input type="text" class="form-control" value="25" id="age">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="fare">Fare</label>
+                            <input type="text" class="form-control" value="25.50" id="fare">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-form-label" for="familySize">Family Size</label>
+                            <input type="text" class="form-control" value="2" id="familySize">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="pclass">Passenger Class</label>
+                            <select id="pclass">
+                                <option value="1">First Class</option>
+                                <option value="2">Second Class</option>
+                                <option value="3">Third Class</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="embarked">Embarked Port</label>
+                            <select id="embarked">
+                                <option value="C">Cherbourg</option>
+                                <option value="Q">Queenstown</option>
+                                <option value="S">Southampton</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-primary" id="filter">Make Prediction!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <hr style="color:lightgray; border-width: 3px;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 id="output"></h1>
+                
+            </div>
+        </div>
+    </div>
+
+  </body>
+
+  </html>
+  
+  </html>
+
+  
+    
+  <!-- <h2 style = "text-align: center"> Machine Model Predictions</h2> -->
+    <!-- <p class="text-muted">Machine Learning - Predictions</p>
+    <p alignment= "center" style="color:blue"; class="text-primary">Traditionally, machine learning models have not included insight into why or how they arrived at an outcome.
+    This makes it difficult to objectively explain the decisions made and actions taken based on these models. Prediction Explanations avoid
+    the “black box” syndrome by describing which characteristics, or feature variables, have the greatest impact on a model’s outcomes.</p>
+    <p class="text-secondary">Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+    <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+    <p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
+    <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+    <p class="text-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p> -->
+
+</body>
+
+</html>
+
+</html>
