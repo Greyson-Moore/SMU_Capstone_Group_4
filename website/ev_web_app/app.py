@@ -24,28 +24,52 @@ def home():
     return render_template("index.html")
 
 # Route to render index.html template
-@app.route("/templates/about")
-def about():
+@app.route("/visualizations")
+def visualizations():
     # Return template and data
-    return render_template("about.html")
+    return render_template("visualizations.html")
 
 # Route to render index.html template
-@app.route("/templates/tableau")
-def tableau():
+@app.route("/predictions")
+def predictions():
     # Return template and data
-    return render_template("tableau.html")
+    return render_template("predictions.html")
+
+# Route to render index.html template
+@app.route("/analysis")
+def analysis():
+    # Return template and data
+    return render_template("analysis.html")
+
+# Route to render index.html template
+@app.route("/data")
+def analysis():
+    # Return template and data
+    return render_template("analysis.html")
+
+# Route to render index.html template
+@app.route("/resources")
+def resources():
+    # Return template and data
+    return render_template("resources.html")
+
+# Route to render index.html template
+@app.route("/team")
+def team():
+    # Return template and data
+    return render_template("team.html")
 
 @app.route("/makePredictions", methods=["POST"])
 def makePredictions():
     content = request.json["data"]
 
     # parse
-    sex_flag = int(content["sex_flag"])
-    age = float(content["age"])
-    fare = float(content["fare"])
-    familySize = int(content["familySize"])
-    p_class = int(content["p_class"])
-    embarked = content["embarked"]
+    acc = int(content["acc"])
+    mph = int(content["mph"])
+    range = int(content["range"])
+    seats = int(content["seats"])
+    body_style = (content["body_style"])
+    drive = content["drive"]
 
     # #dummy data
     # sex_flag = 1
@@ -55,7 +79,7 @@ def makePredictions():
     # p_class = 1
     # embarked = "C"
 
-    prediction = modelHelper.makePredictions(sex_flag, age, fare, familySize, p_class, embarked)
+    prediction = modelHelper.makePredictions(acc, mph, range, seats, body_style, drive)
     print(prediction)
     return(jsonify({"ok": True, "prediction": str(prediction)}))
 

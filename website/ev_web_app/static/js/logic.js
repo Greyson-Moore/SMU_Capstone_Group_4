@@ -8,22 +8,40 @@ $(document).ready(function() {
 
 // call Flask API endpoint
 function makePredictions() {
-    var sex_flag = $("#gender").val();
-    var age = $("#age").val();
-    var fare = $("#fare").val();
-    var familySize = $("#familySize").val();
-    var p_class = $("#pclass").val();
-    var embarked = $("#embarked").val();
+    var acc = $("#acc").val();
+    var mph = $("#mph").val();
+    var range = $("#range").val();
+    var seats = $("#seats").val();
+    var body_style = $("#body_style").val();
+    var drive = $("#drive").val();
+
+// function makePredictions() {
+//     var sex_flag = $("#gender").val();
+//     var age = $("#age").val();
+//     var fare = $("#fare").val();
+//     var familySize = $("#familySize").val();
+//     var p_class = $("#pclass").val();
+//     var embarked = $("#embarked").val();
+
 
     // create the payload
     var payload = {
-        "sex_flag": sex_flag,
-        "age": age,
-        "fare": fare,
-        "familySize": familySize,
-        "p_class": p_class,
-        "embarked": embarked
+        "acc": acc,
+        "mph": mph,
+        "range": range,
+        "seats": seats,
+        "body_style": body_style,
+        "drive": drive
     }
+    // create the payload
+    // var payload = {
+    //     "sex_flag": sex_flag,
+    //     "age": age,
+    //     "fare": fare,
+    //     "familySize": familySize,
+    //     "p_class": p_class,
+    //     "embarked": embarked
+    // }
 
     // Perform a POST request to the query URL
     $.ajax({
