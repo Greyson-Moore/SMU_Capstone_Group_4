@@ -1,0 +1,17 @@
+div
+{
+text-align:justify/left/right/center;
+text-justify:values;
+}
+
+body {
+    font: normal 10px Orbitron;
+}
+
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
