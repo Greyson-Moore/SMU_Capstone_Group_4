@@ -8,7 +8,7 @@ class ModelHelper():
     def __init__(self):
         pass
 
-    def makePredictions(self, acc, mph, range, seats, body_style, drive):
+    def makePredictions(acc, mph, range, seats, body_style, drive):
         RWD_temp = 0
         AWD_temp = 0
 
@@ -34,20 +34,35 @@ class ModelHelper():
             body_pick = 1
         else:
             pass
+        
+        body_lift = 0
+        body_mpv = 0
+        body_pick = 0
+        body_spv = 0
+        body_station = 0
+
+        segment_B = 1
+        segment_C = 0
+        segment_D = 0
+        segment_E = 0
+        segment_F = 0
+        segment_N = 0
+        segment_S = 0
 
         battery = 65
         efficiency = 189
         fastCharge = 436
         rapidCharge = 1
 
-        input_pred = [[acc, mph, range, seats, battery, efficiency, fastCharge, rapidCharge ,body_hatch, body_SUV, body_sedan, body_pick, RWD_temp,AWD_temp]]
+        input_pred = [[acc, battery, efficiency, fastCharge, seats, mph, range, rapidCharge,RWD_temp, AWD_temp,segment_B,segment_C,segment_D,segment_E,segment_F,segment_N,segment_S,body_hatch,body_lift,body_mpv, body_pick, body_spv, body_SUV, body_sedan,body_station]]
 
 
-        filename = 'finalized_model.sav'
+        filename = 'Greyson/finalized_model.sav'
         ada_load = pickle.load(open(filename, 'rb'))
 
         X = np.array(input_pred)
-        preds = ada_load.predict_proba(X)
+        #preds = ada_load.predict_proba(X)
         preds_singular = ada_load.predict(X)
 
         return preds_singular[0]
+
