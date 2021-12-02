@@ -1,7 +1,7 @@
 $(document).ready(function() {
-    console.log("Page Loaded");
-
+  
     $("#filter").click(function() {
+        console.log("test")
         makePredictions();
     });
 });
@@ -12,6 +12,7 @@ function makePredictions() {
     var mph = $("#mph").val();
     var range = $("#range").val();
     var seats = $("#seats").val();
+    var fast_charge = $("#fast_charge").val()
     var body_style = $("#body_style").val();
     var drive = $("#drive").val();
 
@@ -22,7 +23,8 @@ function makePredictions() {
         "range": range,
         "seats": seats,
         "body_style": body_style,
-        "drive": drive
+        "drive": drive,
+        "fast_charge":fast_charge
     }
     
     // Perform a POST request to the query URL
@@ -34,13 +36,10 @@ function makePredictions() {
         
         success: function(returnedData) {
             // print it
-            console.log(returnedData);
-           $("#output").text(returnedData["prediction"])
-            // if (returnedData["prediction"] == 1) {
-            //     $("#output").text("You Survived!");
-            // } else {
-            //     $("#output").text("You Died!");
-            // }
+            //console.log(returnedData);
+            
+           $("#output").text(`Price Prediction: $${returnedData["prediction"]}`);
+           
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
             alert("Status: " + textStatus);

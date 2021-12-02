@@ -26,62 +26,62 @@
 </style>
 </head>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">EVnavbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            <a href="predictions.html"></a>
-          </button>
-      
-          <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home
-                  <span class="visually-hidden"></span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/visualizations.html">Visualizations</a>
-              </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="/predictions">Predictions</a>
-              </li> -->
-              <li class="nav-item">
-                <a class="nav-link" href="/analysis.html">Analysis</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/data.html">Data</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/resources.html">Resources</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/team">Team</a>
-              </li>
-              <!-- <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Separated link</a> -->
-                </div>
-              </li>
-            <!-- </ul>
-            <form class="d-flex">
-              <input class="form-control me-sm-2" type="text" placeholder="Search">
-              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-            </form>
-          </div>
-        </div> -->
-      </nav>
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">EVnavbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item active">
+          <a class="nav-link" href="/">Home
+            <span class="visually-hidden"></span>
+          </a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="/visualizations">Visualizations</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="/predictions">Predictions</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="/analysis">Analysis</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="/data">Data</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="/resources">Resources</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="/team">Team</a>
+      </li>
+    </ul>
+  </div>
+</nav>
       
       <a href="/home"></a>
     <hr style="color:blue; border-width: 3px;">
+    <div >
+        <h1>EV Price Prediction using Machine Learning</h1>
+    </div>
+    <div>
+        <p>This page uses a Random Forest machine learning model to predict the price of an electric vehicle. The model was trained on data that included numerous electric vehicles, their prices and the features of each car.</p>
+        <ul>
+            <li>Accleration - Time it takes for the car to reach 60 mph</li>
+            <li>Top Miles Per Hour - The top speed of the car</li>
+            <li>Range - The amount of miles a vehicle can travel on a full charge</li>
+            <li>Number of Seats - The amount of seats in the vehicle</li>
+            <li>Fast Charge - The amount of miles added to the range with an hour long charge</li>
+            <li>Body Style - Shape of the vehicle</li>
+            <li>Drive - The powered axle on the vehicle</li>
+        </ul>
+    </div>
     <div class="container">
-        <div class="card border-primary mb-3" style="max-width: 20rem;">
+        <div class="card border-primary mb-3" style="max-width: 200rem;">
             <div class="card-header">FILTERS</div>
             <div class="card-body">
                 <div class="row">
@@ -92,28 +92,33 @@
                                 <option value="1">Female</option>
                                 <option value="0">Male</option>
                             </select> -->
+                        
+                        <div class="form-group">
+                            <label class="col-form-label" for="acc">Acceleration (seconds)</label>
+                            <input type="text" class="form-control" value="5.0" id="acc">
                         </div>
                         <div class="form-group">
-                            <label class="col-form-label" for="age">Acceleration(seconds)</label>
-                            <input type="text" class="form-control" value="25" id="acc">
+                            <label class="col-form-label" for="mph">Top Miles Per Hour</label>
+                            <input type="text" class="form-control" value="120.0" id="mph">
                         </div>
                         <div class="form-group">
-                            <label class="col-form-label" for="fare">Top Miles Per Hour</label>
-                            <input type="text" class="form-control" value="25.50" id="mph">
-                        </div>
-                        <div class="form-group">
-                          <label class="col-form-label" for="fare">Range(miles)</label>
-                          <input type="text" class="form-control" value="25.50" id="range">
+                          <label class="col-form-label" for="range">Range (miles)</label>
+                          <input type="text" class="form-control" value="300.0" id="range">
                       </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label class="col-form-label" for="familySize">Number of Seats</label>
-                            <input type="text" class="form-control" value="2" id="familySize">
+                            <label class="col-form-label" for="seats">Number of Seats</label>
+                            <input type="text" class="form-control" value="5" id="seats">
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-form-label" for="seats">Fast Charge (Miles) </label>
+                                <input type="text" class="form-control" value="200" id="fast_charge">
+                            </div>
                         <div class="form-group">
-                            <label class="col-form-label" for="pclass">Body Style</label>
-                            <select id="pclass">
+                            <label class="col-form-label" for="body_style">Body Style</label>
+                            <select id="body_style">
                                 <option value="1">Hatchback</option>
                                 <option value="2">SUV</option>
                                 <option value="3">Sedan</option>
@@ -121,18 +126,17 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label class="col-form-label" for="embarked">Drive</label>
-                            <select id="embarked">
-                                <option value="C">Rear Wheel Drive</option>
-                                <option value="Q">Forward Wheel Drive</option>
-                                <!-- <option value="S">Southampton</option> -->
+                            <label class="col-form-label" for="drive">Drive</label>
+                            <select id="drive">
+                                <option value="RWD">Rear Wheel Drive</option>
+                                <option value="FWD">Forward Wheel Drive</option>
                             </select>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <button type="button" class="btn btn-primary" id="filter">MAKE PREDICTIONS!</button>
+                        <button type="button" class="btn btn-primary" id="filter">PREDICT PRICE</button>
                     </div>
                 </div>
             </div>
@@ -149,6 +153,7 @@
             </div>
         </div>
     </div>
+
 
   </body>
 

@@ -24,16 +24,36 @@ def home():
     return render_template("index.html")
 
 # Route to render index.html template
-@app.route("/about")
+@app.route("/team")
 def about():
     # Return template and data
-    return render_template("about.html")
+    return render_template("team.html")
 
 # Route to render index.html template
-@app.route("/tableau")
-def tableau():
+@app.route("/visualizations")
+def visualizations():
     # Return template and data
-    return render_template("tableau.html")
+    return render_template("visualizations.html")
+
+@app.route("/predictions")
+def predictions():
+    # Return template and data
+    return render_template("predictions.html")
+
+@app.route("/analysis")
+def analysis():
+    # Return template and data
+    return render_template("analysis.html")
+
+@app.route("/resources")
+def resources():
+    # Return template and data
+    return render_template("resources.html")
+
+@app.route("/data")
+def data():
+    # Return template and data
+    return render_template("data.html")
 
 @app.route("/makePredictions", methods=["POST"])
 def makePredictions():
@@ -44,12 +64,13 @@ def makePredictions():
     mph = float(content["mph"])
     range = float(content["range"])
     seats = int(content["seats"])
+    fast_charge = int(content["fast_charge"])
     body_style = (content["body_style"])
     drive = content["drive"]
 
    
 
-    prediction = modelHelper.makePredictions(acc, mph, range, seats, body_style, drive)
+    prediction = modelHelper.makePredictions(acc, mph, range, seats, body_style, drive, fast_charge)
     print(prediction)
     return(jsonify({"ok": True, "prediction": str(prediction)}))
     
@@ -61,17 +82,17 @@ def makePredictions():
 
 #############################################################
 
-@app.after_request
-def add_header(r):
-    """
-    Add headers to both force latest IE rendering engine or Chrome Frame,
-    and also to cache the rendered page for 10 minutes.
-    """
-    r.headers['X-UA-Compatible'] = 'IE=Edge,chrome=1'
-    r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate, public, max-age=0"
-    r.headers["Pragma"] = "no-cache"
-    r.headers["Expires"] = "0"
-    return r
+# @app.after_request
+# def add_header(r):
+#     """
+#     Add headers to both force latest IE rendering engine or Chrome Frame,
+#     and also to cache the rendered page for 10 minutes.
+#     """
+#     r.headers['X-UA-Compatible'] = 'IE=Edge,chrome=1'
+#     r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate, public, max-age=0"
+#     r.headers["Pragma"] = "no-cache"
+#     r.headers["Expires"] = "0"
+#     return r
 
 #main
 if __name__ == "__main__":

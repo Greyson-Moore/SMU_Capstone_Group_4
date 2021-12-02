@@ -1,6 +1,3 @@
-import pandas as pd
-import datetime
-import time
 import pickle
 import numpy as np
 
@@ -8,7 +5,7 @@ class ModelHelper():
     def __init__(self):
         pass
 
-    def makePredictions(self, acc, mph, range, seats, body_style, drive):
+    def makePredictions(self, acc, mph, range, seats, body_style, drive,fast_charge):
         RWD_temp = 0
         AWD_temp = 0
 
@@ -51,18 +48,20 @@ class ModelHelper():
 
         battery = 65
         efficiency = 189
-        fastCharge = 436
+        #fastCharge = 500
         rapidCharge = 1
 
-        input_pred = [[acc, battery, efficiency, fastCharge, seats, mph, range, rapidCharge,RWD_temp, AWD_temp,segment_B,segment_C,segment_D,segment_E,segment_F,segment_N,segment_S,body_hatch,body_lift,body_mpv, body_pick, body_spv, body_SUV, body_sedan,body_station]]
+        input_pred = [[acc, battery, efficiency, fast_charge, seats, mph, range, rapidCharge,RWD_temp, AWD_temp,segment_B,segment_C,segment_D,segment_E,segment_F,segment_N,segment_S,body_hatch,body_lift,body_mpv, body_pick, body_spv, body_SUV, body_sedan,body_station]]
 
 
         filename = 'static/finalized_model.sav'
-        ada_load = pickle.load(open(filename, 'rb'))
+        rf = pickle.load(open(filename, 'rb'))
 
         X = np.array(input_pred)
-        #preds = ada_load.predict_proba(X)
-        preds_singular = ada_load.predict(X)
 
+        preds_singular = rf.predict(X)
+
+        preds_singular[0] = round(preds_singular[0]*1.13,2) 
+        print( preds_singular[0])
         return preds_singular[0]
 

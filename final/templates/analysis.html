@@ -26,40 +26,42 @@
 </style>
 </head>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">EVnavbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            <a href="predictions.html"></a>
-          </button>
-      
-          <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home
-                  <span class="visually-hidden"></span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/visualizations.html">Visualizations</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/predictions">Predictions</a>
-              </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="/analysis.html">Analysis</a>
-              </li> -->
-              <li class="nav-item">
-                <a class="nav-link" href="/data.html">Data</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/resources.html">Resources</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/team">Team</a>
-              </li>
-      </nav>
+   <!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">EVnavbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item active">
+          <a class="nav-link" href="/">Home
+            <span class="visually-hidden"></span>
+          </a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="/visualizations">Visualizations</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="/predictions">Predictions</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="/analysis">Analysis</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="/data">Data</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="/resources">Resources</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="/team">Team</a>
+      </li>
+    </ul>
+  </div>
+</nav>
  <!-- Team -->
 <div class="w3-container" id="team" style="margin-top:75px">
   <h1 class="w3-xxlarge w3-text-blue"><b>Analysis</b></h1>
@@ -88,7 +90,7 @@
     <div class="col-md-12">
         <blockquote class="blockquote">
             <p class="mb-0">
-              <img src="../images/kaggle.jpg" alt="Month Loop" style="float:left;width:35%;padding:2%;">
+              <img src="static/images/kaggle.jpg" alt="Month Loop" style="float:left;width:35%;padding:2%;">
               We chose the Electric Car dataset for analysis as it is rich with informations about Vehicle details/specification, if not all, most electric vehicles in the current market. This dataset provides the make, model, Acceleration per Seconds, Top Speed, Range per Charge, Battery Pack, Efficiency, Fast Charge & the type of PowerTrain.
               In addition the Electric Car Sales by Model in USA provides the make, model and monthly electric vehicle sales data starting jan 2012 to dec 2019.
             <br>
@@ -108,7 +110,7 @@
     <div class="col-md-12">
       <blockquote class="blockquote">
           <p class="mb-0">
-            <img src="../images/dataset.jpg" alt="Month Loop" style="float:left;width:35%;padding:2%;">
+            <img src="static/images/dataset.jpg" alt="Month Loop" style="float:left;width:35%;padding:2%;">
               When pulling the row data from this database, we where faced with a very large
               dataset requiring an extensive clean up process which included removing null values, removing/renaming columns, creating a new calculated field
             . For example, most of the data is in Kilometers and we wanted to separate 
@@ -122,7 +124,7 @@
     <div class="col-md-12">
       <blockquote class="blockquote">
           <p class="mb-0">
-            <img src="../images/strings.jpg" alt="Month Loop" style="float:left;width:35%;padding:2%;">
+            <img src="static/images/strings.jpg" alt="Month Loop" style="float:left;width:35%;padding:2%;">
             We focused on all columns of integers information.  We also cleaned the columns with discrepancies in reporting. 
           </p>
       </blockquote>
@@ -138,9 +140,8 @@
   <div class="row">
     <div class="col-md-12">
         <blockquote class="blockquote">
-          <img src="../images/tableau.jpg" alt="Month Loop" style="float:left;width:35%;padding:2%;">
-            <p class="mb-0">Based on all of the cleaning techniques we performed, we utilized a subset 
-              of this data of our Tableau visualizations.
+          <img src="static/images/tableau.jpg" alt="Month Loop" style="float:left;width:35%;padding:2%;">
+            <p class="mb-0">Based on all of the cleaning techniques we performed, we utilized a subset of this data of our Tableau visualizations. We grouped the months by year to develop the yearly sales for 2019 and 2018 data. When it came to the features, we focused on 1 feature per visualization to highlight the best performing by make of the vehicle.
             </p>
         </blockquote>
     </div>
@@ -156,7 +157,7 @@
     <div class="col-md-12">
       <blockquote class="blockquote">
           <p class="mb-0">
-            <img src="../images/kvalues.jpg" alt="Month Loop" style="float:left;width:35%;padding:2%;">
+            <img src="static/images/kvalues.jpg" alt="Month Loop" style="float:left;width:35%;padding:2%;">
             To prepare our dataset for machine learning modeling, we looped through different k values to find which had the highest level of accuracy. We used only odd
             numbers in order to avoid ties. We only used the columns that were coded to be classified 
             within this classification system and took out all of those categories not listed here. 
@@ -194,11 +195,11 @@
     <div class="col-md-12">
       <blockquote class="blockquote">
           <p class="mb-0">
-            <img src="../images/heatmap.jpg" alt="Month Loop" style="float:left;width:35%;padding:2%;">
+            <img src="static/images/heatmap.jpg" alt="Month Loop" style="float:left;width:35%;padding:2%;">
             The label and one-hot encoding we performed on for features, provided a lot of additional columns for our dataset 
             so investigated our correlations.  We took a subset of the correlations with the largest correlating factors as 
             displayed in the Correlation Heatmap.  We removed the feature categories with low correlations, leaving us with 
-            the categories of: Acceleration, Efficiency, Seats, Top MPH, Range & Power Train, which are the finalized
+            the categories of: Acceleration, Efficiency, Seats, Top MPH, Range ,Fast Charge & Power Train, which are the finalized
             feature categories that we ran through our Machine Learning Model.
           </p>
       </blockquote>
@@ -216,14 +217,9 @@
     <div class="col-lg-12">
         <blockquote class="blockquote">
             <p class="mb-0">
-              <img src="../images/randomforestregressor.jpg" alt="MonthLoop" style="float:left;width:35%;padding:2%;">
-              We ran our data using the classification models, but we saw that our model 
-              was overfitting the data.  The model was overlooking our second class of target status of 
-              “Closed/Cleared.”  To counter this, we decided to use two machine learning models.  The 
-              first model determines the probability of whether or not our target status ended in suspended
-                or not suspended. Our second model then took the not suspended incidents to predict the 
-                probability that the incident either ended in arrest or ended in the incident being closed or 
-                cleared.
+              <img src="static/images/randomforestregressor.jpg" alt="MonthLoop" style="float:left;width:35%;padding:2%;">
+                After looking at correlations, we used the cleaned data set to create our model. A random forest regressor model was used with 200 estimators. The model's goal was to accurately
+                predict the price of an electric vehicle using the features mentioned in the Correlations section. The model returns a predicted price for the user. Using the pickle library in python, the model was saved and implemented into the web app.
             </p>
         </blockquote>
     </div>
